@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+
+.confirmacao{
+    position: absolute;
+    z-index: 999;
+    top: 250px;
+    background-color: rgb(136, 165, 219);
+    padding: 20px;
+    font-weight: bold;
+    color: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 2px #000;
+}
+
+.confirmacao h1{
+    color: red;
+}
+
+.confirmacao h2{
+    margin: 20px 0;
+}
+
+.confirmacao nav a{
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 1px #000;
+}
+
+.confirmacao nav a:hover{
+    background-color: red;
+    color: #ffffff;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100vh;
+    background-color: rgb(136, 165, 219);
+    justify-content: space-evenly;
+    perspective: 1000px;
+}
+
+.card{
+    display: flex;
+    width: 20%;
+    margin:10px;
+    position: relative;
+    justify-content: center;
+    background-color: red;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    box-shadow: 1px 1px 1px black;
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.verso-card{
+    width: 90%;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.frente-card{
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    backface-visibility: hidden;
+
+}
+
+.card.flip{
+    transform: rotateY(-180deg);
+}
